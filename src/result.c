@@ -274,7 +274,7 @@ plproxy_tuple_from_result(PGresult *res, TupleDesc tupdesc, ProxyFunction *func,
 		/* result contains only binary data */
 		for (i = 0; i < nfields; i++)
 		{
-			Datum d;
+			Datum d = 0;
 			int typsize;
 			int colpos = conn->result_map ? conn->result_map[i] : i;
 
